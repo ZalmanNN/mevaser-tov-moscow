@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(238, 245, 251, 0.95), rgba(245, 247, 251, 0) 360px),
     var(--bg);
@@ -877,6 +878,8 @@ h1 {
 
   .lead-story__media {
     min-height: 240px;
+    padding: 20px 14px 28px;
+    overflow: hidden;
   }
 
   .brand-stage {
@@ -884,13 +887,14 @@ h1 {
   }
 
   .lead-photo-stack {
-    width: min(310px, calc(100% - 28px));
+    width: min(100%, 300px);
   }
 
   .lead-photo-stack__small {
-    right: -14px;
-    bottom: -18px;
-    border-width: 5px;
+    right: 8px;
+    bottom: 8px;
+    width: 35%;
+    border-width: 4px;
   }
 
   .lead-story__body {
@@ -899,7 +903,8 @@ h1 {
 
   h1 {
     max-width: 11ch;
-    font-size: clamp(2.35rem, 13vw, 3.4rem);
+    overflow-wrap: anywhere;
+    font-size: 3rem;
   }
 
   .ticker {
