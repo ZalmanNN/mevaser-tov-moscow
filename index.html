@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Мевасер тов Москва - современная новостная главная для еврейского агентства новостей в России.">
+    <title>Мевасер тов Москва | Новости еврейской жизни</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Мевасер тов Москва">
+        <img class="brand__logo" src="photo_2024-03-31_17-22-00.jpg" alt="Эмблема Мевасер тов Москва">
+        <span class="brand__text">
+          <strong>Mevaser tov Moscow</strong>
+          <span>מבשר טוב מוסקבה</span>
+        </span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Главная навигация">
+        <a href="#top">Главная</a>
+        <a href="#community">Община</a>
+        <a href="#israel">Израиль</a>
+        <a href="#culture">Культура</a>
+        <a href="#opinion">Мнения</a>
+      </nav>
+
+      <div class="header-actions">
+        <label class="search" aria-label="Поиск по новостям">
+          <span>Поиск</span>
+          <input id="searchInput" type="search" placeholder="Тема, автор, рубрика">
+        </label>
+        <a class="telegram-link" href="https://t.me/Mevaser_tov" target="_blank" rel="noreferrer">Telegram</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="ticker" aria-label="Срочные новости">
+        <strong>Сейчас</strong>
+        <div class="ticker__items">
+          <div class="ticker__track">
+            <span>Обновления общинной жизни Москвы</span>
+            <span>Календарь событий недели</span>
+            <span>Позиция редакции и комментарии экспертов</span>
+            <span aria-hidden="true">Обновления общинной жизни Москвы</span>
+            <span aria-hidden="true">Календарь событий недели</span>
+            <span aria-hidden="true">Позиция редакции и комментарии экспертов</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="lead-grid" aria-label="Главные материалы">
+        <article class="lead-story news-item" data-category="community" data-text="община москва календарь события еврейская жизнь">
+          <div class="lead-story__media">
+            <div class="brand-stage" aria-label="Вращающаяся эмблема Мевасер тов Москва">
+              <div class="brand-coin">
+                <span class="brand-coin__edge" aria-hidden="true"></span>
+                <img class="brand-coin__face brand-coin__face--front" src="photo_2024-03-31_17-22-00.jpg" alt="Эмблема агентства Мевасер тов Москва">
+                <img class="brand-coin__face brand-coin__face--back" src="photo_2024-03-31_17-22-00.jpg" alt="" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+          <div class="lead-story__body">
+            <div class="eyebrow">Главная тема</div>
+            <h1>Еврейская жизнь Москвы в одном новостном центре</h1>
+            <p>
+              Оперативная лента, глубокие объяснения, афиша, интервью и заметки о людях,
+              которые формируют жизнь общины в России.
+            </p>
+            <div class="story-meta">
+              <span>Редакция</span>
+              <span>Обновлено 20 мая</span>
+              <span>4 мин чтения</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="live-panel" aria-label="Короткая лента">
+          <div class="section-title">
+            <h2>Лента</h2>
+            <span>Live</span>
+          </div>
+          <ol>
+            <li>
+              <time>12:40</time>
+              <a href="#community">Московские общины готовят открытый календарь лекций и встреч</a>
+            </li>
+            <li>
+              <time>11:15</time>
+              <a href="#culture">Новый культурный сезон: концерты, выставки и семейные программы</a>
+            </li>
+            <li>
+              <time>09:50</time>
+              <a href="#charity">Фонды помощи собирают заявки на адресную поддержку</a>
+            </li>
+            <li>
+              <time>08:30</time>
+              <a href="#opinion">Колонка дня: как читать новости в тревожную неделю</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="controls-band" aria-label="Фильтр рубрик">
+        <div class="topic-tabs" role="list" aria-label="Рубрики">
+          <button class="topic-tab is-active" type="button" data-filter="all">Все</button>
+          <button class="topic-tab" type="button" data-filter="community">Община</button>
+          <button class="topic-tab" type="button" data-filter="israel">Израиль</button>
+          <button class="topic-tab" type="button" data-filter="culture">Культура</button>
+          <button class="topic-tab" type="button" data-filter="charity">Помощь</button>
+          <button class="topic-tab" type="button" data-filter="opinion">Мнения</button>
+        </div>
+      </section>
+
+      <section class="content-shell">
+        <div class="news-column" aria-label="Новости">
+          <div class="section-title">
+            <h2>Главные новости</h2>
+            <a href="https://t.me/Mevaser_tov" target="_blank" rel="noreferrer">Все обновления</a>
+          </div>
+
+          <div class="news-grid">
+            <article id="community" class="article-card news-item" data-category="community" data-text="община москва школа образование семья лекция">
+              <div class="card-label">Община</div>
+              <h3>В Москве запускают серию встреч о семейном образовании и традиции</h3>
+              <p>Практические лекции, вопросы раввинам и разговоры с педагогами станут частью открытой программы для родителей.</p>
+              <div class="story-meta">
+                <span>13:20</span>
+                <span>2 мин</span>
+              </div>
+            </article>
+
+            <article id="israel" class="article-card news-item accent-blue" data-category="israel" data-text="израиль дипломатия безопасность комментарий">
+              <div class="card-label">Израиль</div>
+              <h3>Эксперты объясняют, какие решения обсуждают в израильской политике</h3>
+              <p>Короткий разбор контекста, основных игроков и возможных последствий для русскоязычной аудитории.</p>
+              <div class="story-meta">
+                <span>12:05</span>
+                <span>5 мин</span>
+              </div>
+            </article>
+
+            <article id="culture" class="article-card news-item accent-gold" data-category="culture" data-text="культура книга театр музыка выставка">
+              <div class="card-label">Культура</div>
+              <h3>Книжная полка недели: новые издания о памяти, Москве и диаспоре</h3>
+              <p>Редакционная подборка для тех, кто следит за историей, искусством и современными еврейскими авторами.</p>
+              <div class="story-meta">
+                <span>10:40</span>
+                <span>3 мин</span>
+              </div>
+            </article>
+
+            <article id="charity" class="article-card news-item accent-green" data-category="charity" data-text="благотворительность помощь волонтеры пожилые семьи">
+              <div class="card-label">Помощь</div>
+              <h3>Волонтерские группы обновили список нужд для семей и пожилых людей</h3>
+              <p>Собраны контакты координаторов, график дежурств и понятная форма для тех, кто готов присоединиться.</p>
+              <div class="story-meta">
+                <span>09:15</span>
+                <span>2 мин</span>
+              </div>
+            </article>
+
+            <article id="opinion" class="article-card news-item accent-red" data-category="opinion" data-text="мнение колонка медиа доверие новости">
+              <div class="card-label">Мнения</div>
+              <h3>Почему общинным медиа нужна спокойная скорость</h3>
+              <p>Авторская колонка о том, как оставаться точными, когда читатель ждет быстрых и человеческих объяснений.</p>
+              <div class="story-meta">
+                <span>08:30</span>
+                <span>4 мин</span>
+              </div>
+            </article>
+
+            <article class="article-card news-item" data-category="community" data-text="афиша шаббат праздник дети молодежь">
+              <div class="card-label">Афиша</div>
+              <h3>Гид выходных: шаббатние встречи, детские занятия и молодежные клубы</h3>
+              <p>Куда пойти, кого слушать и какие события требуют предварительной регистрации.</p>
+              <div class="story-meta">
+                <span>Вечер</span>
+                <span>6 событий</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="side-column" aria-label="Редакционные блоки">
+          <section class="telegram-card">
+            <div class="telegram-card__head">
+              <img src="photo_2024-03-31_17-22-00.jpg" alt="">
+              <div>
+                <h2>Mevaser tov Moscow</h2>
+                <p dir="rtl" lang="he">מבשר טוב מוסקבה</p>
+              </div>
+            </div>
+            <p>Подписывайтесь на канал, чтобы получать новости и срочные сообщения там, где удобно читать каждый день.</p>
+            <a href="https://t.me/Mevaser_tov" target="_blank" rel="noreferrer">Перейти в Telegram</a>
+          </section>
+
+          <section class="digest-block">
+            <div class="section-title">
+              <h2>Дайджест</h2>
+              <span>Неделя</span>
+            </div>
+            <ul>
+              <li>Главные решения общинных организаций</li>
+              <li>Культурные события и новые проекты</li>
+              <li>Благотворительные инициативы</li>
+              <li>Разборы и авторские колонки</li>
+            </ul>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Мевасер тов Москва</strong>
+        <p>Еврейское агентство новостей в России</p>
+      </div>
+      <p dir="rtl" lang="he">סוכנות חדשות יהודיות ברוסיה</p>
+      <a href="https://t.me/Mevaser_tov" target="_blank" rel="noreferrer">t.me/Mevaser_tov</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
