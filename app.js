@@ -7,8 +7,27 @@ const nextCandle = document.querySelector("#nextCandle");
 const candleList = document.querySelector("#candleList");
 const torahReading = document.querySelector("#torahReading");
 const calendarLocation = document.querySelector("#calendarLocation");
+const designOptions = document.querySelectorAll(".design-option");
 
 let activeFilter = "all";
+const availableDesigns = new Set(["editorial", "noir", "festival"]);
+
+function setDesign(design) {
+  const safeDesign = availableDesigns.has(design) ? design : "editorial";
+  document.documentElement.dataset.design = safeDesign;
+
+  designOptions.forEach((option) => {
+    const isActive = option.dataset.designChoice === safeDesign;
+    option.classList.toggle("is-active", isActive);
+    option.setAttribute("aria-pressed", String(isActive));
+  });
+
+  try {
+    localStorage.setItem("mevaser-design", safeDesign);
+  } catch (error) {
+    console.warn("Design preference was not saved", error);
+  }
+}
 
 function applyFilters() {
   const query = searchInput.value.trim().toLowerCase();
@@ -35,6 +54,15 @@ tabs.forEach((tab) => {
 });
 
 searchInput.addEventListener("input", applyFilters);
+
+const initialDesign = document.documentElement.dataset.design || "editorial";
+setDesign(initialDesign);
+
+designOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    setDesign(option.dataset.designChoice);
+  });
+});
 
 function formatMoscowDate(isoDate) {
   return new Intl.DateTimeFormat("ru-RU", {
