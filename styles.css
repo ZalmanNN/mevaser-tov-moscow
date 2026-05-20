@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(238, 245, 251, 0.95), rgba(245, 247, 251, 0) 360px),
     var(--bg);
@@ -396,10 +397,10 @@ p {
 }
 
 h1 {
-  max-width: 10ch;
+  max-width: 12ch;
   margin-bottom: 18px;
   color: #081829;
-  font-size: clamp(2.4rem, 6vw, 5.35rem);
+  font-size: clamp(2.35rem, 5.2vw, 4.85rem);
   line-height: 0.95;
 }
 
@@ -419,6 +420,11 @@ h1 {
   font-weight: 700;
 }
 
+.story-meta a {
+  color: var(--brand);
+  font-weight: 900;
+}
+
 .story-meta span + span::before {
   content: "";
   display: inline-block;
@@ -432,12 +438,42 @@ h1 {
 
 .live-panel,
 .telegram-card,
+.calendar-card,
 .digest-block,
 .article-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(16, 32, 51, 0.06);
+}
+
+.lead-photo-stack {
+  position: relative;
+  width: min(430px, 100%);
+  isolation: isolate;
+}
+
+.lead-photo-stack__main,
+.lead-photo-stack__small {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 22px 55px rgba(7, 50, 92, 0.18);
+}
+
+.lead-photo-stack__main {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.lead-photo-stack__small {
+  position: absolute;
+  right: -24px;
+  bottom: -28px;
+  z-index: 2;
+  width: 46%;
+  aspect-ratio: 4 / 3;
+  border: 6px solid white;
 }
 
 .live-panel {
@@ -543,9 +579,10 @@ h1 {
 }
 
 .article-card {
+  --card-pad: 24px;
   position: relative;
   min-height: 250px;
-  padding: 24px;
+  padding: var(--card-pad);
   overflow: hidden;
 }
 
@@ -584,6 +621,27 @@ h1 {
   color: #526278;
 }
 
+.article-card--photo > img {
+  width: calc(100% + (var(--card-pad) * 2));
+  height: 190px;
+  margin: calc(var(--card-pad) * -1) calc(var(--card-pad) * -1) 18px;
+  object-fit: cover;
+}
+
+.mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 18px 0 0;
+}
+
+.mini-gallery img {
+  width: 100%;
+  aspect-ratio: 1.2;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
 .article-card.is-hidden {
   display: none;
 }
@@ -593,6 +651,83 @@ h1 {
   gap: 18px;
   position: sticky;
   top: 96px;
+}
+
+.calendar-card {
+  padding: 22px;
+}
+
+.calendar-card__hero {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding: 18px;
+  background:
+    linear-gradient(135deg, rgba(0, 167, 216, 0.16), rgba(199, 146, 45, 0.12)),
+    var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.calendar-card__hero span,
+.torah-reading span {
+  color: var(--brand);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.calendar-card__hero strong {
+  color: var(--brand-deep);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.calendar-card__hero small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.calendar-list {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.calendar-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.calendar-list dt {
+  color: #405267;
+  font-weight: 850;
+}
+
+.calendar-list dd {
+  margin: 0;
+  color: var(--brand-deep);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.torah-reading {
+  padding-top: 2px;
+}
+
+.torah-reading p {
+  margin: 8px 0 14px;
+  color: #526278;
+}
+
+.source-link {
+  color: var(--brand);
+  font-size: 0.84rem;
+  font-weight: 900;
 }
 
 .telegram-card {
@@ -743,10 +878,23 @@ h1 {
 
   .lead-story__media {
     min-height: 240px;
+    padding: 20px 14px 28px;
+    overflow: hidden;
   }
 
   .brand-stage {
     width: 210px;
+  }
+
+  .lead-photo-stack {
+    width: min(100%, 300px);
+  }
+
+  .lead-photo-stack__small {
+    right: 8px;
+    bottom: 8px;
+    width: 35%;
+    border-width: 4px;
   }
 
   .lead-story__body {
@@ -755,7 +903,8 @@ h1 {
 
   h1 {
     max-width: 11ch;
-    font-size: clamp(2.35rem, 13vw, 3.4rem);
+    overflow-wrap: anywhere;
+    font-size: 3rem;
   }
 
   .ticker {
@@ -772,6 +921,7 @@ h1 {
   }
 
   .article-card {
+    --card-pad: 18px;
     min-height: 220px;
   }
 
