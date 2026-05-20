@@ -13,95 +13,6 @@
   --green: #18735b;
   --red: #b63b4a;
   --shadow: 0 18px 45px rgba(16, 32, 51, 0.09);
-  --body-bg:
-    linear-gradient(180deg, rgba(238, 245, 251, 0.95), rgba(245, 247, 251, 0) 360px),
-    var(--bg);
-  --header-bg: rgba(255, 255, 255, 0.88);
-  --header-line: rgba(216, 226, 235, 0.86);
-  --heading: #081829;
-  --text-strong: #1d3047;
-  --text-soft: #526278;
-  --nav-color: #314255;
-  --control-bg: #ffffff;
-  --control-ink: #34465a;
-  --lead-media-bg:
-    linear-gradient(140deg, rgba(0, 167, 216, 0.14), rgba(7, 50, 92, 0.09)),
-    #ffffff;
-  --telegram-bg: #0d3155;
-  --telegram-button-bg: var(--cyan);
-  --telegram-button-ink: #04233a;
-  --footer-bg: #0b1d30;
-  --radius-card: 8px;
-}
-
-html[data-design="noir"] {
-  color-scheme: dark;
-  --bg: #101310;
-  --surface: #171d1b;
-  --surface-strong: #202925;
-  --ink: #f3f7f2;
-  --muted: #a9b8b2;
-  --line: #35423d;
-  --brand: #47c7d9;
-  --brand-deep: #f0ce6a;
-  --cyan: #49d1e2;
-  --gold: #d9aa45;
-  --green: #49b984;
-  --red: #d06b7a;
-  --shadow: 0 20px 55px rgba(0, 0, 0, 0.34);
-  --body-bg:
-    linear-gradient(180deg, rgba(28, 44, 39, 0.96), rgba(16, 19, 16, 0.98) 420px),
-    #101310;
-  --header-bg: rgba(18, 24, 22, 0.9);
-  --header-line: rgba(82, 103, 96, 0.7);
-  --heading: #f7fbf7;
-  --text-strong: #e4eee9;
-  --text-soft: #bcc8c2;
-  --nav-color: #cfdbd5;
-  --control-bg: #1d2522;
-  --control-ink: #d8e4df;
-  --lead-media-bg:
-    linear-gradient(140deg, rgba(73, 209, 226, 0.16), rgba(217, 170, 69, 0.12)),
-    #141b18;
-  --telegram-bg: #0e2929;
-  --telegram-button-bg: #f0ce6a;
-  --telegram-button-ink: #172018;
-  --footer-bg: #070a08;
-}
-
-html[data-design="festival"] {
-  --bg: #f6fbf8;
-  --surface: #ffffff;
-  --surface-strong: #edf8f2;
-  --ink: #10251d;
-  --muted: #607369;
-  --line: #cfe4d9;
-  --brand: #0d7f66;
-  --brand-deep: #174b3f;
-  --cyan: #1ca7bd;
-  --gold: #bd8520;
-  --green: #18835f;
-  --red: #a83d68;
-  --shadow: 0 18px 40px rgba(20, 75, 58, 0.1);
-  --body-bg:
-    linear-gradient(180deg, rgba(237, 248, 242, 0.96), rgba(246, 251, 248, 0) 380px),
-    linear-gradient(120deg, rgba(28, 167, 189, 0.08), rgba(189, 133, 32, 0.08) 55%, rgba(168, 61, 104, 0.05)),
-    #f6fbf8;
-  --header-bg: rgba(255, 255, 255, 0.9);
-  --header-line: rgba(188, 217, 203, 0.9);
-  --heading: #10251d;
-  --text-strong: #243f35;
-  --text-soft: #536d61;
-  --nav-color: #2b4b3f;
-  --control-bg: #ffffff;
-  --control-ink: #2e5446;
-  --lead-media-bg:
-    linear-gradient(140deg, rgba(28, 167, 189, 0.16), rgba(189, 133, 32, 0.12)),
-    #ffffff;
-  --telegram-bg: #123f39;
-  --telegram-button-bg: #f2c65b;
-  --telegram-button-ink: #17342f;
-  --footer-bg: #12302b;
 }
 
 * {
@@ -115,7 +26,9 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background: var(--body-bg);
+  background:
+    linear-gradient(180deg, rgba(238, 245, 251, 0.95), rgba(245, 247, 251, 0) 360px),
+    var(--bg);
   color: var(--ink);
   font-family: Inter, "Segoe UI", Arial, "Noto Sans Hebrew", sans-serif;
   line-height: 1.5;
@@ -141,13 +54,13 @@ input {
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: minmax(220px, auto) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(250px, auto) 1fr auto;
   align-items: center;
   gap: 24px;
   min-height: 76px;
   padding: 12px clamp(18px, 4vw, 56px);
-  background: var(--header-bg);
-  border-bottom: 1px solid var(--header-line);
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(216, 226, 235, 0.86);
   backdrop-filter: blur(18px);
 }
 
@@ -200,7 +113,7 @@ input {
   height: 100%;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: var(--surface);
+  background: white;
   object-fit: cover;
   backface-visibility: hidden;
   box-shadow: 0 10px 22px rgba(7, 50, 92, 0.16);
@@ -254,9 +167,8 @@ input {
 .main-nav {
   display: flex;
   justify-content: center;
-  min-width: 0;
   gap: clamp(12px, 2vw, 26px);
-  color: var(--nav-color);
+  color: #314255;
   font-size: 0.94rem;
   font-weight: 700;
 }
@@ -276,47 +188,6 @@ input {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.design-switcher {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 40px;
-  padding: 4px;
-  background: var(--surface-strong);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-}
-
-.design-switcher > span {
-  padding: 0 8px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 850;
-}
-
-.design-option {
-  min-height: 30px;
-  padding: 0 10px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--control-ink);
-  cursor: pointer;
-  font-size: 0.78rem;
-  font-weight: 850;
-}
-
-.design-option:hover,
-.design-option:focus-visible,
-.design-option.is-active {
-  background: var(--brand-deep);
-  color: white;
-}
-
-html[data-design="noir"] .design-option.is-active {
-  color: #132018;
 }
 
 .search {
@@ -364,7 +235,7 @@ html[data-design="noir"] .design-option.is-active {
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--surface);
+  background: white;
 }
 
 .menu-button span {
@@ -389,7 +260,7 @@ main {
   padding: 10px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  color: var(--text-soft);
+  color: #394b5f;
 }
 
 .ticker strong {
@@ -410,7 +281,6 @@ main {
 .ticker__items {
   min-width: 0;
   overflow: hidden;
-  contain: paint;
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
 }
@@ -458,7 +328,7 @@ main {
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius-card);
+  border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
@@ -468,7 +338,9 @@ main {
   place-items: center;
   min-height: 100%;
   padding: clamp(24px, 4vw, 58px);
-  background: var(--lead-media-bg);
+  background:
+    linear-gradient(140deg, rgba(0, 167, 216, 0.14), rgba(7, 50, 92, 0.09)),
+    #ffffff;
   perspective: 1400px;
   overflow: hidden;
 }
@@ -525,7 +397,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 50%;
   object-fit: cover;
-  background: var(--surface);
+  background: #ffffff;
   backface-visibility: hidden;
   box-shadow: 0 22px 55px rgba(7, 50, 92, 0.18);
 }
@@ -595,14 +467,14 @@ p {
 h1 {
   max-width: 12ch;
   margin-bottom: 18px;
-  color: var(--heading);
+  color: #081829;
   font-size: clamp(2.35rem, 5.2vw, 4.85rem);
   line-height: 0.95;
 }
 
 .lead-story p {
   max-width: 54ch;
-  color: var(--text-soft);
+  color: #42546a;
   font-size: clamp(1rem, 1.5vw, 1.18rem);
 }
 
@@ -639,7 +511,7 @@ h1 {
 .article-card {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius-card);
+  border-radius: 8px;
   box-shadow: 0 12px 30px rgba(16, 32, 51, 0.06);
 }
 
@@ -669,7 +541,7 @@ h1 {
   z-index: 2;
   width: 46%;
   aspect-ratio: 4 / 3;
-  border: 6px solid var(--surface);
+  border: 6px solid white;
 }
 
 .live-panel {
@@ -688,7 +560,7 @@ h1 {
 
 .section-title h2 {
   margin-bottom: 0;
-  color: var(--heading);
+  color: #122235;
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   line-height: 1.1;
 }
@@ -723,7 +595,7 @@ h1 {
 }
 
 .live-panel a {
-  color: var(--text-strong);
+  color: #1d3047;
   font-weight: 800;
   line-height: 1.35;
 }
@@ -745,8 +617,8 @@ h1 {
   padding: 0 16px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--control-bg);
-  color: var(--control-ink);
+  background: white;
+  color: #34465a;
   cursor: pointer;
   font-size: 0.92rem;
   font-weight: 850;
@@ -808,13 +680,13 @@ h1 {
 
 .article-card h3 {
   margin: 12px 0 12px;
-  color: var(--heading);
+  color: #112236;
   font-size: clamp(1.24rem, 2.3vw, 1.62rem);
   line-height: 1.12;
 }
 
 .article-card p {
-  color: var(--text-soft);
+  color: #526278;
 }
 
 .article-card--photo > img {
@@ -900,7 +772,7 @@ h1 {
 }
 
 .calendar-list dt {
-  color: var(--text-soft);
+  color: #405267;
   font-weight: 850;
 }
 
@@ -917,7 +789,7 @@ h1 {
 
 .torah-reading p {
   margin: 8px 0 14px;
-  color: var(--text-soft);
+  color: #526278;
 }
 
 .source-link {
@@ -928,7 +800,7 @@ h1 {
 
 .telegram-card {
   padding: 22px;
-  background: var(--telegram-bg);
+  background: #0d3155;
   color: white;
 }
 
@@ -958,8 +830,8 @@ h1 {
 
 .telegram-card a {
   width: 100%;
-  background: var(--telegram-button-bg);
-  color: var(--telegram-button-ink);
+  background: var(--cyan);
+  color: #04233a;
 }
 
 .digest-block {
@@ -977,7 +849,7 @@ h1 {
 .digest-block li {
   padding-left: 18px;
   border-left: 3px solid var(--line);
-  color: var(--text-soft);
+  color: #405267;
   font-weight: 750;
 }
 
@@ -987,7 +859,7 @@ h1 {
   align-items: center;
   gap: 20px;
   padding: 28px clamp(18px, 4vw, 56px);
-  background: var(--footer-bg);
+  background: #0b1d30;
   color: white;
 }
 
@@ -999,75 +871,6 @@ h1 {
 .site-footer a {
   color: #8be3ff;
   font-weight: 850;
-}
-
-html[data-design="noir"] .telegram-link,
-html[data-design="noir"] .topic-tab:hover,
-html[data-design="noir"] .topic-tab:focus-visible,
-html[data-design="noir"] .topic-tab.is-active {
-  color: #132018;
-}
-
-html[data-design="noir"] .live-panel,
-html[data-design="noir"] .calendar-card,
-html[data-design="noir"] .digest-block,
-html[data-design="noir"] .article-card,
-html[data-design="noir"] .lead-story {
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.32);
-}
-
-html[data-design="noir"] .article-card--photo > img,
-html[data-design="noir"] .lead-photo-stack__main,
-html[data-design="noir"] .lead-photo-stack__small {
-  filter: saturate(0.92) contrast(1.06);
-}
-
-html[data-design="festival"] .site-header {
-  border-bottom-width: 2px;
-}
-
-html[data-design="festival"] .lead-story,
-html[data-design="festival"] .live-panel,
-html[data-design="festival"] .calendar-card,
-html[data-design="festival"] .digest-block,
-html[data-design="festival"] .article-card {
-  border-radius: 6px;
-}
-
-html[data-design="festival"] .article-card::before {
-  height: 6px;
-}
-
-html[data-design="festival"] .calendar-card__hero {
-  border-left: 5px solid var(--gold);
-}
-
-@media (max-width: 1320px) {
-  .site-header {
-    gap: 14px;
-  }
-
-  .main-nav {
-    gap: 14px;
-    font-size: 0.9rem;
-  }
-
-  .header-actions {
-    gap: 8px;
-  }
-
-  .design-switcher > span {
-    display: none;
-  }
-
-  .design-option {
-    padding: 0 8px;
-  }
-
-  .search {
-    width: 220px;
-    min-width: 180px;
-  }
 }
 
 @media (max-width: 1060px) {
@@ -1100,15 +903,6 @@ html[data-design="festival"] .calendar-card__hero {
   .site-header.is-open .header-actions {
     align-items: stretch;
     flex-direction: column;
-  }
-
-  .site-header.is-open .design-switcher {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .site-header.is-open .design-option {
-    white-space: nowrap;
   }
 
   .site-header.is-open .search {

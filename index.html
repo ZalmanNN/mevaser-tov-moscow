@@ -7,16 +7,6 @@
     <title>Мевасер тов Москва | Новости еврейской жизни</title>
     <link rel="icon" type="image/jpeg" href="photo_2024-03-31_17-22-00.jpg">
     <link rel="apple-touch-icon" href="photo_2024-03-31_17-22-00.jpg">
-    <script>
-      try {
-        const savedDesign = localStorage.getItem("mevaser-design");
-        if (savedDesign) {
-          document.documentElement.dataset.design = savedDesign;
-        }
-      } catch (error) {
-        document.documentElement.dataset.design = "editorial";
-      }
-    </script>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -50,12 +40,6 @@
       </nav>
 
       <div class="header-actions">
-        <div class="design-switcher" aria-label="Выбор дизайна">
-          <span>Дизайн</span>
-          <button class="design-option is-active" type="button" data-design-choice="editorial" aria-pressed="true">Редакция</button>
-          <button class="design-option" type="button" data-design-choice="noir" aria-pressed="false">Вечер</button>
-          <button class="design-option" type="button" data-design-choice="festival" aria-pressed="false">Праздник</button>
-        </div>
         <label class="search" aria-label="Поиск по новостям">
           <span>Поиск</span>
           <input id="searchInput" type="search" placeholder="Тема, автор, рубрика">
